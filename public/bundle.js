@@ -8998,6 +8998,15 @@ var Album = function (_React$Component) {
             null,
             album.name
           ),
+          _react2.default.createElement(
+            'button',
+            { className: 'btn btn-default' },
+            _react2.default.createElement(
+              'a',
+              { href: 'mailto:someone@example.com?Subject=Hello, check out this' + album.name },
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-step-backward' })
+            )
+          ),
           _react2.default.createElement('img', { src: album.imageUrl, className: 'img-thumbnail' })
         ),
         _react2.default.createElement(_Songs2.default, {
@@ -13015,7 +13024,7 @@ var Artist = function (_Component) {
         albums: this.props.albums,
         currentSong: this.props.currentSong
       };
-
+      console.log('children=====', children);
       return _react2.default.createElement(
         'div',
         null,
@@ -28953,7 +28962,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouter.Router,
-  { history: _reactRouter.hashHistory },
+  { history: _reactRouter.browserHistory },
   _react2.default.createElement(
     _reactRouter.Route,
     { path: '/', component: _AppContainer2.default },
@@ -28967,9 +28976,7 @@ _reactDom2.default.render(_react2.default.createElement(
     ),
     _react2.default.createElement(_reactRouter.Route, { path: '/albums', component: _Albums2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: 'albums/:albumId', component: _Album2.default })
-  ),
-  '//',
-  _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Songs2.default })
+  )
 ), document.getElementById('app'));
 
 /***/ })

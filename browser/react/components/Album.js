@@ -20,6 +20,9 @@ class Album extends React.Component {
     <div className="album">
       <div>
         <h3>{ album.name }</h3>
+        <button className="btn btn-default">
+            <a href={`mailto:someone@example.com?Subject=Hello, check out this${album.name}`}><span className="glyphicon glyphicon-step-backward"></span></a>
+          </button>
         <img src={ album.imageUrl } className="img-thumbnail" />
       </div>
       <Songs

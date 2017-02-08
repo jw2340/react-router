@@ -7,10 +7,11 @@ import Artists from './components/Artists.js';
 import Artist from './components/Artist.js';
 import Songs from './components/Songs.js';
 
-import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+
+  <Router history={browserHistory}>
     <Route path='/' component={AppContainer}>
       <IndexRedirect to="/albums" />
       <Route path="/artists" component={Artists} />
@@ -21,7 +22,6 @@ ReactDOM.render(
       <Route path='/albums' component={Albums} />
       <Route path="albums/:albumId" component={Album} />
     </Route>
-    //<Route path="*" component={Songs} />
   </Router>,
   document.getElementById('app')
 );

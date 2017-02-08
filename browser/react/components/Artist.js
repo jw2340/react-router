@@ -18,7 +18,7 @@ export default class Artist extends Component {
       albums: this.props.albums,
       currentSong: this.props.currentSong
     }
-
+    console.log('children=====', children)
     return <div>
       <h3>{ selectedArtist.name }</h3>
       <ul className="nav nav-tabs">
