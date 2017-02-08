@@ -2,11 +2,16 @@ import React from 'react';
 
 const Songs = (props) => {
 
-  const songs = props.songs;
   const currentSong = props.currentSong;
   const isPlaying = props.isPlaying;
   const toggle = props.toggleOne;
+  const albums = props.albums;
+  const songsArray = albums.map((album) => album.songs);
+  const songs = songsArray.reduce((a, c) => {
+    return a.concat(c)
+  })
 
+console.log(props)
   return (
     <table className='table'>
       <thead>
