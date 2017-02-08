@@ -21,6 +21,7 @@ ReactDOM.render(
       <Route path='/albums' component={Albums} />
       <Route path="albums/:albumId" component={Album} />
     </Route>
+    //<Route path="*" component={Songs} />
   </Router>,
   document.getElementById('app')
 );

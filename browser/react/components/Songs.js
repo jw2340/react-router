@@ -2,16 +2,20 @@ import React from 'react';
 
 const Songs = (props) => {
 
+console.log(props)
+
   const currentSong = props.currentSong;
   const isPlaying = props.isPlaying;
   const toggle = props.toggleOne;
   const albums = props.albums;
-  const songsArray = albums.map((album) => album.songs);
-  const songs = songsArray.reduce((a, c) => {
-    return a.concat(c)
-  })
-
-console.log(props)
+  var songs = props.songs;
+  if (albums) {
+    const songsArray = albums.map((album) => album.songs);
+    songs = songsArray.reduce((a, c) => {
+      return a.concat(c)
+    })
+  } else {
+  }
   return (
     <table className='table'>
       <thead>
