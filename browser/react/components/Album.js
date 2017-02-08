@@ -1,12 +1,20 @@
 import React from 'react';
 import Songs from '../components/Songs';
+import axios from 'axios';
 
-const Album = (props) => {
 
-  const album = props.album;
-  const currentSong = props.currentSong;
-  const isPlaying = props.isPlaying;
-  const toggleOne = props.toggleOne;
+class Album extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  componentDidMount (props) {
+    this.props.selectAlbum(this.props.routeParams.albumId)
+  }
+  render() {
+  const album = this.props.album;
+  const currentSong = this.props.currentSong;
+  const isPlaying = this.props.isPlaying;
+  const toggleOne = this.props.toggleOne;
 
   return (
     <div className="album">
@@ -20,7 +28,8 @@ const Album = (props) => {
         isPlaying={isPlaying}
         toggleOne={toggleOne} />
     </div>
-  );
+    );
+  }
 }
 
 export default Album;
